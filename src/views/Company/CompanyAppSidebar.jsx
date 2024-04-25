@@ -30,7 +30,7 @@ const CompanyAppSidebar = () => {
         <SimpleBar className="nicescroll-bar">
           <div className="menu-content-wrap">
             <Link
-              to="add-new-post"
+              to="add-new-company"
               className="btn btn-primary btn-rounded btn-block mb-4"
             >
               Create Company

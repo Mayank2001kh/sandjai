@@ -203,7 +203,7 @@ export const SidebarMenu = [
       {
         id: "dash_comp",
         name: "Company",
-        icon: <Icons.Browser />,
+        icon: <Icons.Package />,
         path: "/apps/company",
         childrens: [
           {

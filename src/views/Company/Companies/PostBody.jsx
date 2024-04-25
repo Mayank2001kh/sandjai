@@ -5,12 +5,18 @@ import PostsTable from "./PostsTable";
 import { ArrowDown, ArrowUp, X } from "react-feather";
 
 const PostBody = () => {
+  const scrollStyle = {
+    msOverflowStyle: "none", // IE and Edge
+    scrollbarWidth: "none", // Firefox
+    WebkitScrollbar: { display: "none" }, // Hide scrollbar for Chrome, Safari, and Opera
+  };
+
   return (
     <div className="blog-body">
       <SimpleBar className="nicescroll-bar">
-        <div className="d-flex shadow p-3 rounded gap-4 mb-3">
+        <div className="d-flex flex-column flex-lg-row shadow p-3 rounded gap-4 mb-3">
           <img
-            className="w-20 rounded"
+            className="w-lg-20  rounded"
             src="https://umbrellacreative.com.au/wp-content/uploads/2020/01/hide-the-pain-harold-why-you-should-not-use-stock-photos.jpg"
             alt=""
           />
@@ -18,24 +24,24 @@ const PostBody = () => {
             <h2>Lets do international business BV</h2>
 
             <div className="d-flex gap-4 p-2">
-              <div className="d-flex  flex-column justify-content-center shadow p-2 rounded w-50">
+              <div className="d-flex  flex-column justify-content-start justify-comtent-lg-center shadow p-2 rounded w-50">
                 <div className="d-flex align-items-center gap-1">
                   <ArrowUp size={20} color="green" />
-                  <div className="fs-4 fw-bold">$ 4,500</div>
+                  <div className="fs-8 fs-xl-4 fw-bold">$ 4,500</div>
                 </div>
                 <div className="opacity-50">Earnings</div>
               </div>
-              <div className="d-flex  flex-column justify-content-center shadow p-2 rounded w-50">
+              <div className="d-flex  flex-column justify-content-start justify-comtent-lg-center shadow p-2 rounded w-50">
                 <div className="d-flex align-items-center gap-1">
                   <ArrowDown size={20} color="red" />
-                  <div className="fs-4 fw-bold">60</div>
+                  <div className="fs-8 fs-xl-4 fw-bold">60</div>
                 </div>
                 <div className="opacity-50">Projects</div>
               </div>
-              <div className="d-flex  flex-column justify-content-center shadow p-2 rounded w-50">
+              <div className="d-flex  flex-column justify-content-start justify-comtent-lg-center shadow p-2 rounded w-50">
                 <div className="d-flex align-items-center gap-1">
                   <ArrowUp size={20} color="green" />
-                  <div className="fs-4 fw-bold">60 %</div>
+                  <div className="fs-8 fs-xl-4 fw-bold">60 %</div>
                 </div>
                 <div className="opacity-50">Sucess Rate</div>
               </div>
@@ -45,7 +51,8 @@ const PostBody = () => {
         <Tab.Container defaultActiveKey="Summary">
           <Nav
             variant="tabs"
-            className="nav-line nav-icon nav-light border-bottom"
+            className="nav-line nav-icon nav-light border-bottom flex-nowrap overflow-y-hidden overflow-x-scroll"
+            style={scrollStyle}
           >
             <Nav.Item>
               <Nav.Link eventKey="Summary">
@@ -88,9 +95,12 @@ const PostBody = () => {
               </Nav.Link>
             </Nav.Item>
           </Nav>
-          <Tab.Content>
-            <Tab.Pane className="d-flex gap-3 " eventKey="Summary">
-              <div className="shadow p-2 w-30 ">
+          <Tab.Content className="">
+            <Tab.Pane
+              className="d-flex flex-column flex-lg-row gap-3 "
+              eventKey="Summary"
+            >
+              <div className="shadow p-2 w-lg-30 ">
                 <h4>Details</h4>
                 <div className="d-flex justify-content-between align-items-center w-75">
                   <div>status</div>
@@ -98,16 +108,18 @@ const PostBody = () => {
                     Active
                   </button>
                 </div>
-                <div>link here</div>
+                <div className="text-decoration-underline text-primary">
+                  link here
+                </div>
                 <div>Vat Number : 123123</div>
               </div>
-              <div className="shadow p-2 w-30 ">
+              <div className="shadow p-2 w-lg-30 ">
                 <h4>Address</h4>
                 <div className="d-flex justify-content-between align-items-center w-75">
                   <div>Address</div>
                 </div>
               </div>
-              <div className="shadow p-2 w-30 ">
+              <div className="shadow p-2 w-lg-30">
                 <h4>Contacts</h4>
                 <div className="d-flex flex-column justify-content-between fs-8  w-75">
                   <div className="text-blue">Name</div>
@@ -115,7 +127,7 @@ const PostBody = () => {
                   <div>email@here.com</div>
                 </div>
               </div>
-              <div className="shadow p-2 w-30 ">
+              <div className="shadow p-2 w-lg-30">
                 <h4>Standing</h4>
                 <div className="d-flex justify-content-between align-items-center fs-7">
                   <div className="fw-bold">Paid to Date</div>
